@@ -35,7 +35,7 @@ h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
 header.hero{background:linear-gradient(160deg,var(--green),var(--green-2));color:var(--on-green)}
 header.hero .wrap{padding-block:36px 32px;display:flex;flex-direction:column;gap:18px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand img{width:44px;height:44px;border-radius:50%}
+.brand img{width:30px;height:30px;border-radius:50%}
 .brand .n{font-weight:700;letter-spacing:.4px;font-size:14px}
 .brand .s{font-size:10.5px;letter-spacing:2px;color:var(--on-green-soft);text-transform:uppercase}
 .hero h1{font-size:clamp(30px,6vw,42px);line-height:1.1}
