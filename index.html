@@ -31,7 +31,7 @@
 
 <main>
   <div class="wrap" id="main">
-    <div class="instr">Marque <strong>uma alternativa</strong> por questão. As respostas ficam salvas neste navegador enquanto você faz a prova. Quando terminar, clique em <strong>Corrigir prova</strong> para ver a nota, o gabarito comentado e quais itens da cartilha revisar.</div>
+    <div class="instr">Marque <strong>uma alternativa</strong> por questão. As respostas ficam salvas só neste navegador enquanto você faz a prova. Para começar do zero, use <strong>Apagar tudo</strong>. Quando terminar, clique em <strong>Corrigir prova</strong> para ver a nota, o gabarito comentado e quais itens da cartilha revisar.</div>
     <div id="result-slot"></div>
     <div id="questions"></div>
     <footer>Ester Santos · Mega Seguros · Departamento de Sinistros · Notas</footer>
@@ -41,9 +41,11 @@
 <div class="bar">
   <div class="wrap">
     <div class="prog"><small id="prog-txt">0 de 0 respondidas</small><div class="track"><i id="prog-bar"></i></div></div>
+    <button class="btn ghost" id="btn-clear" type="button">Apagar tudo</button>
     <button class="btn" id="btn-submit" type="button">Corrigir prova</button>
   </div>
 </div>
+<div id="toast" role="status" hidden>Respostas apagadas. A prova está zerada.</div>
 
 <script src="js/script.js"></script>
 </body>

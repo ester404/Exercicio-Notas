@@ -146,6 +146,20 @@ document.getElementById("btn-submit").onclick=()=>{
   if(Object.keys(st.ans).length<Q.length){warnBlank();return;}
   st.done=true;save();grade(true);progress();
 };
+const clearBtn=document.getElementById("btn-clear");let clearTimer=null;
+clearBtn.onclick=()=>{
+  if(!clearBtn.classList.contains("armed")){
+    clearBtn.classList.add("armed");clearBtn.textContent="Clique de novo para apagar";
+    clearTimer=setTimeout(()=>{clearBtn.classList.remove("armed");clearBtn.textContent="Apagar tudo";},4000);
+    return;
+  }
+  clearTimeout(clearTimer);clearBtn.classList.remove("armed");clearBtn.textContent="Apagar tudo";
+  try{localStorage.removeItem(KEY);}catch(e){}
+  st={order:{},ans:{},done:false,nome:""};nomeEl.value="";ensureOrder();save();
+  document.body.classList.remove("done","hideok");document.getElementById("result-slot").innerHTML="";
+  render();window.scrollTo({top:0,behavior:"smooth"});
+  const t=document.getElementById("toast");t.hidden=false;setTimeout(()=>t.hidden=true,2600);
+};
 const nomeEl=document.getElementById("nome");
 nomeEl.addEventListener("input",()=>{st.nome=nomeEl.value;save();});
 load();ensureOrder();save();nomeEl.value=st.nome||"";render();
